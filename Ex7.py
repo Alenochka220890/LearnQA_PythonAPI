@@ -2,8 +2,13 @@ import requests
 
 methods = [{"method":"GET"},{"method":"POST"},{"method":"PUT"},{"method":"DELETE"}]
 
+response = requests.get("https://playground.learnqa.ru/ajax/api/compare_query_type")
+print(f"Без параметра ответ: " + response.text)
+
+
 response = requests.head("https://playground.learnqa.ru/ajax/api/compare_query_type", data={"method": "HEAD"})
 print(f"HEAD and head " + response.text)
+print(response.status_code)
 
 num = 0
 while num < 4:
